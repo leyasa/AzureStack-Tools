@@ -52,14 +52,15 @@ Connect-AzsVpn -Password $Password
 ```
 
 ## Configure Azure Stack PowerShell Environment
+![Adding Azure Stack Environment](https://github.com/Azure/AzureStack-Tools/raw/mattmcg/renamereadme/Connect/EnvironmentAdd.gif)
+
 
 One method of deploying templates and interacting with your Azure Stack Development Kit is to access it via PowerShell.
 
 See the [Azure Stack Install PowerShell](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-powershell) article to download and install the correct PowerShell modules for Azure Stack.
 
-AzureRM cmdlets can be targeted at multiple Azure clouds such as Azure China, Government, and Azure Stack.
+To target your Azure Stack instance as a tenant, an AzureRM environment needs to be registered as follows. The ARM endpoint below is the tenant default for a one-node environment. AzureRM cmdlets can be targeted at multiple Azure clouds such as Azure China, Government, and Azure Stack.
 
-To target your Azure Stack instance as a tenant, an AzureRM environment needs to be registered as follows. The ARM endpoint below is the tenant default for a one-node environment.
 
 ```powershell
 Add-AzureRMEnvironment -Name AzureStack -ArmEndpoint "https://management.local.azurestack.external"
